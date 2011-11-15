@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency("rspec", ">= 2.0")
   s.add_development_dependency("wirble")
+  s.add_development_dependency('stickler', [">= 2.0"])
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
