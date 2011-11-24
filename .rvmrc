@@ -1,1 +1,3 @@
-rvm use --create --install 1.9.2@poundpay >& /dev/null
+#!/usr/bin/env bash
+
+rvm use "ruby-1.9.2-p180@poundpay"
