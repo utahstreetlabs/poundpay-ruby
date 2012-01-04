@@ -99,7 +99,7 @@ module Poundpay
     end
 
     def cancel
-      statuses = ['AUTHORIZED', 'ESCROWED']
+      statuses = ['STAGED', 'AUTHORIZED', 'ESCROWED']
       unless statuses.include?(status)
         raise PaymentCancelException.new "Payment status is #{status}.  Only payments with statuses " \
         "#{statuses.join(', ')} may be canceled"
