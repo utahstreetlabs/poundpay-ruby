@@ -113,9 +113,11 @@ describe Payment do
   end  
 
   describe "#cancel" do
-    it "should not be able to cancel a STAGED payment" do
+    it "should cancel a STAGED payment" do
       @staged_payment = Payment.new staged_payment_attributes
-      expect {@staged_payment.cancel}.to raise_error(PaymentCancelException)
+      @staged_payment.should_receive(:save).and_return(Payment.new canceled_payment_attributes)
+      @staged_payment.cancel
+      @staged_payment.status.should == 'CANCELED'
     end
 
     it "should cancel an ESCROWED payment" do
