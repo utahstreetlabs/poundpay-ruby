@@ -1,3 +1,3 @@
 module Poundpay
-  VERSION = "0.3.1.1.copious"
+  VERSION = "0.4.0.0.copious"
 end
